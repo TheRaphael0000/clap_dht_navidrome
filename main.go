@@ -82,7 +82,7 @@ func (p *clapdhtPlugin) queryAPI(itemID string, count int) ([]TrackResponse, err
 	}
 
 	if resp.StatusCode != 200 {
-		return nil, fmt.Errorf("response status %d", resp.StatusCode)
+		return nil, fmt.Errorf("response status %d, body: %s", resp.StatusCode, resp.Body)
 	} else {
 		logInfo(fmt.Sprintf("response status: %d", resp.StatusCode))
 	}
