@@ -1,0 +1,36 @@
+{
+	"name": "clap-dht",
+	"author": "TheRaphael0000",
+	"version": "1.0.0",
+	"config": {
+		"schema": {
+			"type": "object",
+			"properties": {
+				"apiUrl": {
+					"type": "string",
+					"title": "API URL",
+					"description": "e.g. http://127.0.0.1:80 / http://172.21.0.2:80 / http://host.docker.internal:80",
+					"default": ""
+				}
+			}
+		},
+		"uiSchema": {
+			"type": "VerticalLayout",
+			"elements": [
+				{
+					"type": "Control",
+					"scope": "#/properties/apiUrl"
+				}
+			]
+		}
+	},
+	"permissions": {
+		"config": {
+			"reason": "Read plugin configuration"
+		},
+		"http": {
+			"reason": "Call the clap-dht API",
+			"requiredHosts": ["*"]
+		}
+	}
+}
